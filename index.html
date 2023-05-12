@@ -115,7 +115,7 @@
   let model;
   async function LoadModel () {
     console.log("testing")
-      model = await tf.loadLayersModel('http://127.0.0.1:8887/model.json');
+      model = await tf.loadLayersModel('new/model.json');
       console.log(model)
   }
   LoadModel();
