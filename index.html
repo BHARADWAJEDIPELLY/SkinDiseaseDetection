@@ -78,7 +78,7 @@
         <p>This application can be used for initial diagnosis of skin diseases.</p> 
         <p>This ML model can detect skin cancers belonging to these <strong>7</strong> classes.</p> 
     </div>
-     <div class="flex flex-col" id="load">
+     <div class="flex flex-col text-center gap-4" id="load">
                 <p class="text-2xl font-light text-blue" >Loading the model....Please wait!!</p>
                 <img src="https://media.tenor.com/VVrTk5ABuiYAAAAC/mr-bean-mr.gif" alt="Mr.Bean-Waiting" class="rounded-2xl">
             </div>
@@ -108,7 +108,7 @@
         </label>
     </button>
     <img id="output" width="200" />
-    <button class="p-4 bg-blue-500 text-white rounded-md hidden" onclick="predict()" id="btn_predict">Predict</button>
+    <button class="p-4 bg-blue-500 text-white rounded-md hidden hover:scale-110" onclick="predict()" id="btn_predict" >Predict</button>
     <h1 id="prediction" class="text-3xl font-bold"></h1>
   </div>
 </div>
