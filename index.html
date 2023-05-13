@@ -78,7 +78,8 @@
         <p>This application can be used for initial diagnosis of skin diseases.</p> 
         <p>This ML model can detect skin cancers belonging to these <strong>7</strong> classes.</p> 
     </div>
-    <button class="px-6 py-4 bg-indigo-500 rounded-lg hover:scale-110">
+      <p class="text-2xl font-light text-blue" id="load">Loading the model....Please wait!!</p>
+    <button class="px-6 py-4 bg-indigo-500 rounded-lg hover:scale-110 hidden" id="btn_upload">
         <label for="dropzone-file">
             <div class="inline-flex mr-2">
                 <svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -104,7 +105,7 @@
         </label>
     </button>
     <img id="output" width="200" />
-    <button class="p-4 bg-blue-500 text-white rounded-md" onclick="predict()">Predict</button>
+    <button class="p-4 bg-blue-500 text-white rounded-md hidden" onclick="predict()" id="btn_predict">Predict</button>
     <h1 id="prediction" class="text-3xl font-bold"></h1>
   </div>
 </div>
@@ -117,6 +118,13 @@
     console.log("testing")
       model = await tf.loadLayersModel('new/model.json');
       console.log(model)
+      let uploadBtn = document.getElementById('btn_upload');
+            let loading = document.getElementById('load');
+            let predictBtn = document.getElementById('btn_predict');
+
+            loading.style.display = "none";
+            uploadBtn.style.display = "block";
+            predictBtn.style.display = "block";
   }
   LoadModel();
   let loadFile = function(event) {
